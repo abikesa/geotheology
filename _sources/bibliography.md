@@ -40,3 +40,15 @@ _Geopolitics: Resources, Needs, Costs, Supply, Demand_. Everyone is talking abou
    - Unveiled resentment in other principalities: think, China
    - Transvaluation of their values, wielding a hammer, and unleashing DeepSeek
 
+## Part of the reason is I set up processes
+
+"People used to ask me, Why was I calm during the presidency? In addition to being from Hawaii, which really helped (we're just chill)," he joked, "part of the reason is I set up processes. So by the time I made a decision, I might not get the outcome I wanted, but it might be a 51-49 decision, or a 60-40 decision, but I can say I heard all the voices involved -- gotten all the info, seen all the perspectives -- so when I made decision, I was making it as well as anybody could make it."
+
+
+In 2018: Obama describes what being in the Situation Room is like - and his advice anyone can use to make hard decisions. His words can be applied to any situation in which a decision needs to be made without any obvious solution
+
+1. Logit function, y. Realise there's no right answer -- it's about weighing the odds.
+2. Not geniuses, but l'homme moyen -- workers, laborers. Listen to the people who will be most affected by the change.
+3. Counterfactual vs. Agentic (This is his point of view). Get outside the 'bubble' of people who are 'supposed' to advise you; Test your B.S. detector.
+4. Seek out the naysayers; reweighting even within the tribe
+5. Error, Loss function, back-propagation. Insist that people deliver bad news quickly and are not punished for honest mistakes.
