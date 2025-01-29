@@ -432,6 +432,107 @@ document.write(`
 <p>Beyond outright fraud, the scientific process also generates hallucinations and delusions at both individual and collective levels. Scientists, like all humans, are susceptible to cognitive biases, such as confirmation bias and motivated reasoning. These distortions can lead entire fields astray for years, as seen in psychology’s replication crisis or nutrition science’s decades-long war over dietary fat. Science is not immune to social contagion—consensus can form around ideas not because they are true but because they are institutionally or politically advantageous. Eugenics was once considered rigorous science, yet it was nothing more than a mass hallucination reinforced by ideology and institutional inertia.</p>
 <p>False paradigms can persist for decades, misleading generations of scientists before finally being discarded. Phlogiston theory, caloric fluid, and Lamarckian inheritance were not frauds in the traditional sense, but they were systematic distortions of reality that shaped scientific understanding for years. These examples reveal an unsettling truth: the scientific process does not just produce knowledge; it also produces illusions. The challenge is distinguishing between them, and history suggests that even the best scientists struggle to do so in real-time.</p>
 <p>In this sense, science is neither inherently good nor bad—it is a neutral, algorithmic process that generates both knowledge and illusion. The process refines truth through falsification and correction, but it also generates fraud when incentives are misaligned, delusions when humans mistake noise for signal, and hallucinations when cognitive distortions take hold. Every major correction in science—every paradigm shift—is not just a struggle against ignorance but against the false realities that the scientific process itself has produced. Fraud and delusion, then, are not mere side effects of science; they are intrinsic to its unfolding. The challenge is not simply to eliminate them but to learn how to manage and recognize them.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># Function to create the CoffeeTree network with colored nodes and edges</span>
+<span class="k">def</span> <span class="nf">create_colored_coffee_network</span><span class="p">():</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+    
+    <span class="c1"># Define nodes with colors</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Red Eye&quot;</span><span class="p">:</span> <span class="s2">&quot;brown&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Drip&quot;</span><span class="p">:</span> <span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Blonde Roast&quot;</span><span class="p">:</span> <span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Pike Place&quot;</span><span class="p">:</span> <span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Dark Roast&quot;</span><span class="p">:</span> <span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Espresso&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Espresso (Solo/Doppio)&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Americano&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Custom Made&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Latte&quot;</span><span class="p">:</span> <span class="s2">&quot;lightpink&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Cappuccino&quot;</span><span class="p">:</span> <span class="s2">&quot;lightpink&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Macchiato&quot;</span><span class="p">:</span> <span class="s2">&quot;lightpink&quot;</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Add nodes to graph</span>
+    <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    
+    <span class="c1"># Define edges with colors</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Red Eye&quot;</span><span class="p">,</span> <span class="s2">&quot;Drip&quot;</span><span class="p">,</span> <span class="s2">&quot;lightblue&quot;</span><span class="p">),</span>  <span class="c1"># Drip branch</span>
+        <span class="p">(</span><span class="s2">&quot;Red Eye&quot;</span><span class="p">,</span> <span class="s2">&quot;Espresso&quot;</span><span class="p">,</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">),</span>  <span class="c1"># Espresso branch</span>
+        <span class="p">(</span><span class="s2">&quot;Drip&quot;</span><span class="p">,</span> <span class="s2">&quot;Blonde Roast&quot;</span><span class="p">,</span> <span class="s2">&quot;lightblue&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Drip&quot;</span><span class="p">,</span> <span class="s2">&quot;Pike Place&quot;</span><span class="p">,</span> <span class="s2">&quot;lightblue&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Drip&quot;</span><span class="p">,</span> <span class="s2">&quot;Dark Roast&quot;</span><span class="p">,</span> <span class="s2">&quot;lightblue&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Espresso&quot;</span><span class="p">,</span> <span class="s2">&quot;Espresso (Solo/Doppio)&quot;</span><span class="p">,</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Espresso&quot;</span><span class="p">,</span> <span class="s2">&quot;Americano&quot;</span><span class="p">,</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Espresso&quot;</span><span class="p">,</span> <span class="s2">&quot;Custom Made&quot;</span><span class="p">,</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Custom Made&quot;</span><span class="p">,</span> <span class="s2">&quot;Latte&quot;</span><span class="p">,</span> <span class="s2">&quot;lightpink&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Custom Made&quot;</span><span class="p">,</span> <span class="s2">&quot;Cappuccino&quot;</span><span class="p">,</span> <span class="s2">&quot;lightpink&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Custom Made&quot;</span><span class="p">,</span> <span class="s2">&quot;Macchiato&quot;</span><span class="p">,</span> <span class="s2">&quot;lightpink&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="c1"># Add edges to graph</span>
+    <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">G</span><span class="p">,</span> <span class="n">nodes</span>
+
+<span class="c1"># Function to extract edge colors for visualization</span>
+<span class="k">def</span> <span class="nf">get_edge_colors</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">]</span>
+
+<span class="c1"># Function to extract node colors for visualization</span>
+<span class="k">def</span> <span class="nf">get_node_colors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">]</span>
+
+<span class="c1"># Create the network with colored nodes and edges</span>
+<span class="n">coffee_network</span><span class="p">,</span> <span class="n">node_colors</span> <span class="o">=</span> <span class="n">create_colored_coffee_network</span><span class="p">()</span>
+
+<span class="c1"># Plot the network with specified colors</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Set a fixed seed for layout consistency</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">coffee_network</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  
+
+<span class="c1"># Get edge and node colors for plotting</span>
+<span class="n">edge_colors</span> <span class="o">=</span> <span class="n">get_edge_colors</span><span class="p">(</span><span class="n">coffee_network</span><span class="p">)</span>
+<span class="n">node_colors_list</span> <span class="o">=</span> <span class="n">get_node_colors</span><span class="p">(</span><span class="n">coffee_network</span><span class="p">,</span> <span class="n">node_colors</span><span class="p">)</span>
+
+<span class="c1"># Draw the network</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
+    <span class="n">coffee_network</span><span class="p">,</span>
+    <span class="n">pos</span><span class="p">,</span>
+    <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors_list</span><span class="p">,</span>
+    <span class="n">node_size</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span>
+    <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">font_weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
+    <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_colors</span><span class="p">,</span>
+    <span class="n">arrowsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="c1"># Add a title to the diagram</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Starbucks Coffee&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/6e583782f15be96f80f8b45e7ce44b9e9daedd94372e2c5bb338dc74184ad252.png" src="../../_images/6e583782f15be96f80f8b45e7ce44b9e9daedd94372e2c5bb338dc74184ad252.png" />
+</div>
+</div>
 <p>Interestingly, what science seeks to minimize—fraud, delusion, and hallucination—becomes a strategic virtue in adversarial contexts like poker, warfare, politics, and business. In poker, deception is not an aberration but a core strategy. A strong player does not just rely on good hands but manipulates opponents through false signals, bluffing to create a structured distortion of reality. This is fraud repurposed as an information weapon—a calculated asymmetry designed to extract advantage.</p>
 <p>The same principle applies to other domains. Military deception has been a fundamental strategy for centuries, from Sun Tzu’s “all warfare is based on deception” to the elaborate feints of World War II. In business, startups inflate projections to secure funding, knowing that markets reward perception as much as reality. In politics, campaign promises that will never be fulfilled function as strategic bluffs, shaping public expectations and opponent responses. In these domains, fraud is not a failure of the system—it <strong>is</strong> the system. The best players master deception while maintaining credibility, a delicate balance between trust and manipulation.</p>
 <p>Beyond outright fraud, self-delusion can be an asset in games and strategy. Poker players often construct narratives about their own skill, reinforcing a selective illusion of control that enhances performance. Confidence, even if misplaced, can tilt probability in one’s favor. Many of history’s great leaders were borderline delusional, but their belief in their own inevitability altered reality. Napoleon, Steve Jobs, and Elon Musk all weaponized their self-belief, bending the world to fit their vision. Even in financial markets, a well-timed false narrative—such as “crypto is the future” during a speculative bubble—can become a self-fulfilling prophecy, at least for a time.</p>
